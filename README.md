@@ -8,4 +8,4 @@ Use
 
 From the command line we can call index.js and specify two parameters - a bitmap file to read from and one to write to. By default (specifying no arguments), index.js will read from 'test.bmp' and write to 'altered.bmp'
 
-'' node index.js 'newFile.bmp' 'subDir/alteredNewFile.bmp' ''
+`` node index.js 'newFile.bmp' 'subDir/alteredNewFile.bmp' ``
