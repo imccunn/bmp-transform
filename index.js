@@ -1,10 +1,20 @@
 #! /usr/bin/env node
 
+// BMP Transform
+// 
+// Author: Ian McCunn <ianmccunn@gmail.com>
+// License: MIT
+
+
 'use strict';
 
 var fh = require('./lib/fileHandler'),
     bmp = require('./lib/bmpObject'),
     args = process.argv;
+
+/**
+ *  Reads in a bitmap file, applies random byte decimal values to its palette and writes back to a bmp file.
+ */
 
 var app = function() {
 
