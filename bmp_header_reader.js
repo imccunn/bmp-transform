@@ -43,21 +43,5 @@ for (var i = 0; i < (pxStart-offset)/4; i++) {
 
 fs.writeFileSync('img/altered.bmp', bitmap);
 
+console.log('Bitmap buffer sucessfully written to file.');
 
-// console.log(bitmapObject.palette);
-console.log(bitmapObject.palette.length);
-/*
-var rows = [];
-var cols = [];
-
-console.log(bitmapObject);
-
-//console.log('arr size: ' + rows.length);
-// console.log(rows);
-/*
-var strArr = rows.toString();
-fs.writeFile('arrData.txt', strArr, function(err){
-  if (err) throw err;
-  console.log('File written.');
-});
-*/
