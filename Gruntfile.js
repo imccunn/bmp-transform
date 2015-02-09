@@ -16,7 +16,10 @@ module.exports = function(grunt) {
       }
     },
     jscs: {
-      main: ['lib/**/*.js']
+      src: ['lib/**/*.js', 'test/*.js', 'index.js'],
+      options: {
+        config: '.jscsrc'
+      }
     },
     simplemocha: {
       all: {
@@ -31,6 +34,6 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('test', ['jshint', 'simplemocha']);
+  grunt.registerTask('test', ['jshint', 'jscs', 'simplemocha']);
   grunt.registerTask('default', ['test']);
 };
