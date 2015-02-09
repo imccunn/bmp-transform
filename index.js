@@ -19,7 +19,7 @@ var fh = require('./lib/fileHandler'),
 var app = function() {
 
   if (args.length > 4) {
-    throw 'Unrecognized command line argument. Optional read and write file locations permitted.';
+    throw new Error('Unrecognized command line argument. Optional read and write file locations permitted.');
   }
   // Optionally take in a read-file location and write-file location from the command line
   var bmpFile = args[2] || 'img/test.bmp';
