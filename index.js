@@ -9,7 +9,7 @@
 'use strict';
 
 var fh = require('./lib/fileHandler'),
-    bmp = require('./lib/bmpObject'),
+    Bitmap = require('./lib/Bitmap'),
     args = process.argv;
 
 /**
@@ -27,7 +27,7 @@ var app = function() {
 
   var bmpBuf = fh.readBmp(bmpFile);
   
-  var bmpObj = new bmp.Bitmap(bmpBuf);
+  var bmpObj = new Bitmap(bmpBuf);
 
   bmpObj.transformPalette();
 
