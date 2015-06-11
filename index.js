@@ -26,7 +26,7 @@ var app = function() {
   var bmpBuf = fh.readBmp(bmpFile);
 
   var bmpObj = new Bitmap(bmpBuf);
-
+  console.log(bmpObj);
   bmpObj.transformPalette();
 
   bmpBuf = bmpObj.applyPaletteToBuffer(bmpBuf);
