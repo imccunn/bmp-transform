@@ -1,10 +1,8 @@
 #! /usr/bin/env node
 
 // BMP Transform
-// 
 // Author: Ian McCunn <ianmccunn@gmail.com>
 // License: MIT
-
 
 'use strict';
 
@@ -26,7 +24,7 @@ var app = function() {
   var writeFile = args[3] || 'img/altered.bmp';
 
   var bmpBuf = fh.readBmp(bmpFile);
-  
+
   var bmpObj = new Bitmap(bmpBuf);
 
   bmpObj.transformPalette();
@@ -34,7 +32,6 @@ var app = function() {
   bmpBuf = bmpObj.applyPaletteToBuffer(bmpBuf);
 
   fh.writeFile(writeFile, bmpBuf);
-
 };
 
 app();

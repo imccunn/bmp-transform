@@ -3,17 +3,15 @@
 // Testing for bmpObject methods
 
 var expect = require('chai').expect;
-var bmp = require('../lib/bmpObject');
+var Bitmap = require('../lib/Bitmap');
 var fs = require('fs');
 
-
-
 describe('bmp module contructor should read a bitmap buffer and set its header properties', function() {
-  
-  before(function(){
+
+  before(function() {
     this.bmpBuf = fs.readFileSync('./test/test.bmp');
-    this.testBmpObj = new bmp.Bitmap(this.bmpBuf);
-    this.testBmpObj2 = new bmp.Bitmap(this.bmpBuf);
+    this.testBmpObj = new Bitmap(this.bmpBuf);
+    this.testBmpObj2 = new Bitmap(this.bmpBuf);
     this.initialPalette = this.testBmpObj.palette;
     this.modifiedPalette = this.testBmpObj2.palette;
 
@@ -21,7 +19,7 @@ describe('bmp module contructor should read a bitmap buffer and set its header p
   });
 
   it('should have a passed parameter of type Buffer', function() {
-    expect(Buffer.isBuffer(this.bmpBuf)).to.eql(true); 
+    expect(Buffer.isBuffer(this.bmpBuf)).to.eql(true);
   });
 
   it('should have a type of BM', function() {
