@@ -15,23 +15,22 @@ var fh = require('./lib/fileHandler'),
  */
 
 var app = function() {
-
   if (args.length > 4) {
     throw new Error('Unrecognized command line argument. Optional read and write file locations permitted.');
   }
   // Optionally take in a read-file location and write-file location from the command line
-  var bmpFile = args[2] || 'img/test.bmp';
+  var bmpFile = args[2] || 'img/testing1.bmp';
   var writeFile = args[3] || 'img/altered.bmp';
 
   var bmpBuf = fh.readBmp(bmpFile);
 
   var bmpObj = new Bitmap(bmpBuf);
-  console.log(bmpObj);
-  bmpObj.transformPalette();
+  console.log(JSON.stringify(bmpObj.header, null, 2));
+  // bmpObj.transformPalette();
 
-  bmpBuf = bmpObj.applyPaletteToBuffer(bmpBuf);
-
-  fh.writeFile(writeFile, bmpBuf);
+  // bmpBuf = bmpObj.applyPaletteToBuffer(bmpBuf);
+  bmpObj.applyPixelData();
+  fh.writeFile(writeFile, bmpObj.bmpBuf);
 };
 
 app();
