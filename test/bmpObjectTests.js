@@ -1,10 +1,7 @@
-'use strict';
 
-// Testing for bmpObject methods
-
-var expect = require('chai').expect;
-var Bitmap = require('../lib/Bitmap');
-var fs = require('fs');
+const expect = require('chai').expect;
+const Bitmap = require('../lib/Bitmap');
+const fs = require('fs');
 
 describe('bmp module contructor should read a bitmap buffer and set its header properties', function() {
 
