@@ -16,5 +16,6 @@ fh.readFile(bmpFile)
     console.log(JSON.stringify(bmpObj.header, null, 2));
 
     bmpObj.applyPixelData();
+    bmpObj.applyFromPixelGrid();
     fh.writeFile(writeFile, bmpObj.bmpBuf);
   });
