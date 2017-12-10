@@ -7,7 +7,7 @@ const args = process.argv;
 if (args.length > 4) {
   throw new Error('Unrecognized command line argument. Optional read and write file locations permitted.');
 }
-const bmpFile = args[2] || 'img/testing1.bmp';
+const bmpFile = args[2] || 'img/mountain- test.bmp';
 const writeFile = args[3] || 'img/altered.bmp';
 
 fh.readFile(bmpFile)
@@ -16,7 +16,10 @@ fh.readFile(bmpFile)
     console.log(JSON.stringify(bmpObj.header, null, 2));
 
     bmpObj.applyPixelData();
-    bmpObj.sortPixels();
+    // bmpObj.sortPixels();
     bmpObj.applyFromPixelGrid();
     return fh.writeFile(writeFile, bmpObj.bmpBuf);
+  })
+  .catch(err => {
+    console.log(err);
   });
