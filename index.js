@@ -24,6 +24,7 @@ fh.readFile(bmpFile)
     bmpObj.applyFromPixelGrid();
     return fh.writeFile(writeFile, bmpObj.bmpBuf);
   })
+  .then(data => console.log('Done.'))
   .catch(err => {
     console.log(err);
   });
